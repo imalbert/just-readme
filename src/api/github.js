@@ -18,9 +18,9 @@ export const getRepos = (username) => {
  * https://api.github.com/repos/imalbert/fake-coffee/readme
  *
  * @param {github username} username
- * @param {name of project} projectName
+ * @param {name of project} project
  */
-export const getReadme = (username, projectName) => {
-	const GITHUB_README_URL = `${GITHUB_API_URL}/repos/${username}/${projectName}/readme`;
+export const getReadme = (username, project) => {
+	const GITHUB_README_URL = `${GITHUB_API_URL}/repos/${username}/${project}/readme`;
 	return getGithubAPI(GITHUB_README_URL);
 };
