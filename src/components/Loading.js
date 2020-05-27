@@ -1,5 +1,5 @@
-import React from 'react'
+import React from 'react';
 
-const Loading = ({ title }) => <p>{} loading, please wait...</p>
+const Loading = ({ title }) => <p data-testid="loading-message">{title} loading, please wait...</p>;
 
-export default Loading
+export default Loading;

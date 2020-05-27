@@ -20,8 +20,15 @@ const Home = () => {
         <Repos />
       </Route>
       <Route path={match.path}>
-        <form onSubmit={(e) => { e.preventDefault(); history.push(`/${username}`) }}>
-          <input type="text" value={username} onChange={(evt) => changeUsername(evt.target.value)} />
+        <form
+          data-testid="gh-username-form"
+          onSubmit={(e) => { e.preventDefault(); history.push(`/${username}`) }}>
+          <input
+            data-testid="gh-username-input"
+            type="text"
+            placeholder="Github username"
+            value={username} onChange={(evt) => changeUsername(evt.target.value)}
+          />
         </form>
       </Route>
     </Switch>

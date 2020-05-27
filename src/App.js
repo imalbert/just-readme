@@ -11,6 +11,7 @@ function App() {
 	return (
 		<div className="App">
 			<main>
+        <p>just readme</p>
         <Router>
           <Switch>
             <Route path="/">
