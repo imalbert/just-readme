@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 import {
   Switch,
@@ -10,9 +10,14 @@ import {
 import Repos from "./Repos"
 
 const Home = () => {
+  const inputEl = useRef(null)
   const history = useHistory()
   const [username, changeUsername] = useState('')
   const match = useRouteMatch();
+
+  useEffect(() => {
+    inputEl.current.focus()
+  }, [inputEl])
 
   return (
     <Switch>
@@ -24,9 +29,11 @@ const Home = () => {
           data-testid="gh-username-form"
           onSubmit={(e) => { e.preventDefault(); history.push(`/${username}`) }}>
           <input
-            data-testid="gh-username-input"
             type="text"
-            placeholder="Github username"
+            ref={inputEl}
+            data-testid="gh-username-input"
+            placeholder="Input GitHub username then press Enter"
+            style={{ width: '320px', padding: '5px' }}
             value={username} onChange={(evt) => changeUsername(evt.target.value)}
           />
         </form>
