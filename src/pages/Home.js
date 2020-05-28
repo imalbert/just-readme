@@ -16,7 +16,7 @@ const Home = () => {
   const match = useRouteMatch();
 
   useEffect(() => {
-    inputEl.current.focus()
+    if (inputEl.current) inputEl.current.focus()
   }, [inputEl])
 
   return (
